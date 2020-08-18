@@ -38,7 +38,7 @@ namespace SiteECulto.Controllers
                 }
 
                 var responseDataString = response.Content.ReadAsStringAsync();
-                var responseData = JsonConvert.DeserializeObject(responseDataString.Result);
+                var responseData = JsonConvert.DeserializeObject<List<Igreja>>(responseDataString.Result);
                 
                 return Json(responseData);
             }
@@ -69,7 +69,7 @@ namespace SiteECulto.Controllers
             {
                 HttpClient request = new HttpClient();
                 request.BaseAddress = new System.Uri("https://api.eculto.com.br/api/");
-                HttpResponseMessage response = await request.GetAsync($"Igrejas/${Id}?key={Data.key}");
+                HttpResponseMessage response = await request.GetAsync("Igrejas/"+ Id + "?key=" + Data.key);
                 int responseStatus = Convert.ToInt32(response.StatusCode);
 
                 if (responseStatus != 200)
@@ -83,7 +83,7 @@ namespace SiteECulto.Controllers
                 }
 
                 var responseDataString = response.Content.ReadAsStringAsync();
-                var responseData = JsonConvert.DeserializeObject(responseDataString.Result);
+                var responseData = JsonConvert.DeserializeObject<IgrejaCultos>(responseDataString.Result);
 
                 return Json(responseData);
             }
@@ -150,7 +150,7 @@ namespace SiteECulto.Controllers
                 {
                     var retorno = new
                     {
-                        code = 500
+                        code = responseStatus
                     };
 
                     return Json(retorno);

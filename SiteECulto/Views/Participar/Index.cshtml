@@ -5,21 +5,21 @@
 <div class="row">
     <div class="col-md-4"></div>
     <div class="col-md-4">
-            <div class="row">
-                <div class="col">
-                    <img src="~/logo.png" />
-                </div>
-                <div class="col" style="padding-top:5px;">
-                    <h3 class="text-right" style="color:#6c757d"><span style="color:#8b57c9">e</span>Culto</h3>
-                </div>
-            </div>       
+        <div class="row">
+            <div class="col">
+                <img src="~/logo.png" />
+            </div>
+            <div class="col" style="padding-top:5px;">
+                <h3 class="text-right" style="color:#6c757d"><span style="color:#8b57c9">e</span>Culto</h3>
+            </div>
+        </div>
     </div>
     <div class="col-md-4"></div>
 </div>
 <br />
 <div class="row">
     <div class="col text-center">
-        <h2  style="color:#6c757d">Confirme sua presença em eventos religiosos.</h2>        
+        <h2 style="color:#6c757d">Confirme sua presença em eventos religiosos.</h2>
     </div>
 </div>
 <br />
@@ -34,3 +34,12 @@
         <h3 style="color:#8b57c9">Igrejas Credenciadas.</h3>
     </div>
 </div>
+<br />
+<input type="hidden" id="idCulto" />
+<div id="renderHtml"></div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js" integrity="sha512-rmZcZsyhe0/MAjquhTgiUcb4d9knaFc7b5xAfju483gbEXTkeJRUMIPk6s3ySZMYUHEcjKbjLjyddGWMrNEvZg==" crossorigin="anonymous"></script>
+    <script src="~/js/jquery-mask/dist/jquery.mask.min.js"></script>
+    <script src="~/js/site.js"></script>
+}
